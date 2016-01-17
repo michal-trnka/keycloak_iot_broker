@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:dataTable value="#{deviceManager.requestedDevices}" var="d" style="float: left;">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device name" />
+            </f:facet>
+            #{d.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device description" />
+            </f:facet>
+            #{d.description}
+        </h:column>
+    </h:dataTable>
+</html>
