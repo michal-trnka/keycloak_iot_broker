@@ -1,0 +1,11 @@
+{
+  "realm": "IoT",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl4UTGGloWtvpdgXQzBPbSKc6ZNoFAVRdFpmCjMf3+J1pogcd+STtjYcAN0pf9792Bg92/baJR0RuCSKuWAOqU9mNBP/gCfjLWrn645Gw32kpganLJAi9DfDNPTKvpFFY6b4P91UKVkmNZV6ef/uSqx2fFMyBTqCUCFD/IzJJHcylTf3baOwWylEdTN0C9HrOgXml+o2JEVP090236lSts7HJ//yJBdfgmnQpVMVtw7/6Q2kAgDvka1Eky9w79kvVQza4o1oW1+HQtX1HpZdNoonX8yKqd04talqQJ/08DlOG/JDCxS55bBYyAd+VN5GQDn00BC9EpiE1MWrEBKSp0wIDAQAB",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "IoT-Broker",
+  "credentials": {
+    "secret": "fe12116a-5ac9-438e-a774-a90a310fc439"
+  },
+  "use-resource-role-mappings": false
+}

@@ -5,6 +5,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:dataTable value="#{deviceManager.requestedDevices}" var="d" style="float: left;">
+        <f:facet name="header">
+            <h:outputText value="Devices waiting for approval" />
+        </f:facet>
         <h:column>
             <f:facet name="header">
                 <h:outputText value="Device name" />
@@ -16,6 +19,60 @@
                 <h:outputText value="Device description" />
             </f:facet>
             #{d.description}
+        </h:column>
+        <h:column>
+            <h:form>
+                <h:commandButton id="approve#{d.name}" value="Approve"
+                                 action="#{deviceManager.approveDevice(d.name)}" />
+                <h:commandButton id="reject#{d.name}" value="Reject"
+                                 action="#{deviceManager.denyDevice(d.name)}" />
+            </h:form>
+        </h:column>
+    </h:dataTable>
+    <h:dataTable value="#{deviceManager.registeredDevices}" var="d" style="float: left;">
+        <f:facet name="header">
+            <h:outputText value="Approved devices" />
+        </f:facet>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device name" />
+            </f:facet>
+            #{d.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device description" />
+            </f:facet>
+            #{d.description}
+        </h:column>
+        <h:column>
+            <h:form>
+                <h:commandButton id="remove#{d.name}" value="Remove device"
+                                 action="#{deviceManager.denyDevice(d.name)}" />
+            </h:form>
+        </h:column>
+    </h:dataTable>
+    <h:dataTable value="#{deviceManager.deniedDevices}" var="d" style="float: left;">
+        <f:facet name="header">
+            <h:outputText value="Rejected devices" />
+        </f:facet>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device name" />
+            </f:facet>
+            #{d.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Device description" />
+            </f:facet>
+            #{d.description}
+        </h:column>
+        <h:column>
+            <h:form>
+                <h:commandButton id="deny#{d.name}" value="Re approve"
+                                 action="#{deviceManager.reapproveDevice(d.name)}" />
+            </h:form>
         </h:column>
     </h:dataTable>
 </html>
